@@ -2,6 +2,8 @@
 # A shell script allowing to download a Zarr datasets hosted on uk1s3
 # and create a zip that can be read by the Zarr Python library
 
+set -e
+set -x
 
 ZARR_PATH=$1
 ZIP_NAME=$2

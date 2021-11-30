@@ -1,6 +1,8 @@
 #! /bin/sh
 # A shell script allowing to deposit a file to Zenodo
 
+set -e
+set -x
 
 ZIP_NAME=$1
 DEPOSITION=$2
