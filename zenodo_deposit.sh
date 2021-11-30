@@ -7,6 +7,7 @@ ZARR_PATH=$1
 ZIP_NAME=$2
 
 # Use aws sync to retrieve a Zarr dataset locally
+mkdir -p /data/$ZARR_PATH
 aws --endpoint-url https://uk1s3.embassy.ebi.ac.uk s3 sync s3://idr/$ZARR_PATH /data/$ZARR_PATH
 
 # Create a flat zip 
