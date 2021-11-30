@@ -4,7 +4,7 @@
 set -e
 set -x
 
-ZIP_NAME=$1
+ZIP_PATH=$1
 DEPOSITION=$2
 
 # # TBD Create a deposit and retrieve the links.bucket URL
@@ -18,4 +18,4 @@ BUCKET=$(curl -H "Accept: application/json" -H "Authorization: Bearer $ZENODO_TO
 
 # Upload the file with a progress bar
 curl --progress-bar -o /dev/null --upload-file $ZIP_PATH \
-     $BUCKET/$ZIP_NAME?access_token=$ZENODO_TOKEN
+     $BUCKET/${ZIP_PATH##*/}?access_token=$ZENODO_TOKEN
