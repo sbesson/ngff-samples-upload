@@ -12,7 +12,7 @@ aws --endpoint-url https://uk1s3.embassy.ebi.ac.uk s3 sync s3://idr/$ZARR_PATH /
 
 # Create a flat zip 
 (cd /data/$ZARR_PATH && zip -r0 ../$ZIP_NAME .)
-ZIP_PATH=${ZARR_PATH%/*}/$ZIP_NAME
+ZIP_PATH=/data/${ZARR_PATH%/*}/$ZIP_NAME
 
 # Run some minimal validation
 python $(dirname $0)/test.py $ZIP_PATH
